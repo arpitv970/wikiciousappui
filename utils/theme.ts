@@ -33,12 +33,14 @@ type NftThemeMeta = {
   [key: string]: ThemeData
 }
 
+const platformName = 'Wikicious'
+
 export const nftThemeMeta: NftThemeMeta = {
   default: {
     buttonStyle: 'flat',
     fonts: { body: ttCommons, display: ttCommonsExpanded, mono: ttCommonsMono },
     logoPath: '/logos/logo-mark.svg',
-    platformName: 'Mango',
+    platformName,
     rainAnimationImagePath: '',
     sideImagePath: '',
     sideTilePath: '',
@@ -52,7 +54,7 @@ export const nftThemeMeta: NftThemeMeta = {
     buttonStyle: 'raised',
     fonts: { body: nunitoBody, display: nunitoDisplay, mono: ttCommonsMono },
     logoPath: '/images/themes/bonk/bonk-logo.png',
-    platformName: 'Bongo',
+    platformName,
     rainAnimationImagePath: '/images/themes/bonk/bonk-animation-logo.png',
     sideImagePath: '/images/themes/bonk/sidenav-image.png',
     sideTilePath: '/images/themes/bonk/bonk-tile.png',
@@ -70,7 +72,7 @@ export const nftThemeMeta: NftThemeMeta = {
       mono: ttCommonsMono,
     },
     logoPath: '/images/themes/pepe/pepe-logo.png',
-    platformName: 'Pepe',
+    platformName,
     rainAnimationImagePath: '/images/themes/pepe/pepe-logo.png',
     sideImagePath: '/images/themes/pepe/sidenav-image.png',
     sideTilePath: '/images/themes/pepe/pepe-vert-tile.png',
