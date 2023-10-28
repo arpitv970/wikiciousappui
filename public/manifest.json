@@ -5,10 +5,16 @@
   "description": "Wikicious Markets - Decentralised, cross-margin trading up to 10x leverage with lightning speed and near-zero fees",
   "icons": [
     {
+      "src": "logos/192x192-white.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
       "src": "logos/192x192.png",
       "type": "image/png",
       "sizes": "192x192",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "logos/512x512.png",
@@ -18,6 +24,6 @@
     }
   ],
   "start_url": ".",
-  "theme_color": "#ffffff",
+  "theme_color": "#000000",
   "background_color": "#000000"
 }
