@@ -1,5 +1,14 @@
 const { i18n } = require('./next-i18next.config')
 const webpack = require('webpack')
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+    // If you use `MDXProvider`, uncomment the following line.
+    providerImportSource: "@mdx-js/react",
+  },
+})
 const { withSentryConfig } = require('@sentry/nextjs')
 const withPWAConfig = require('next-pwa')({
   dest: 'public',
@@ -16,6 +25,7 @@ const nextConfig = {
     domains: ['raw.githubusercontent.com', 'arweave.net', 'www.dual.finance', 'shdw-drive.genesysgo.net'],
   },
   reactStrictMode: true,
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   //proxy for openserum api cors
   rewrites: async () => {
     return [
@@ -45,8 +55,9 @@ const nextConfig = {
   },
 }
 
-module.exports = withSentryConfig(
-  withPWAConfig(
+module.exports =
+  withMDX(withSentryConfig(withPWAConfig(
+
     nextConfig,
     {
       // For all available options, see:
@@ -78,4 +89,5 @@ module.exports = withSentryConfig(
       disableLogger: true,
     },
   )
-)
+  )
+  )
