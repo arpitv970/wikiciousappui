@@ -1,14 +1,5 @@
 const { i18n } = require('./next-i18next.config')
 const webpack = require('webpack')
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-    // If you use `MDXProvider`, uncomment the following line.
-    providerImportSource: "@mdx-js/react",
-  },
-})
 const { withSentryConfig } = require('@sentry/nextjs')
 const withPWAConfig = require('next-pwa')({
   dest: 'public',
@@ -56,7 +47,7 @@ const nextConfig = {
 }
 
 module.exports =
-  withMDX(withSentryConfig(withPWAConfig(
+  withSentryConfig(withPWAConfig(
 
     nextConfig,
     {
@@ -88,6 +79,5 @@ module.exports =
       // Automatically tree-shake Sentry logger statements to reduce bundle size
       disableLogger: true,
     },
-  )
   )
   )
